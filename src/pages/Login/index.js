@@ -6,12 +6,10 @@ import Divider from '../../components/Divider';
 const rules =[
   {
      required: true,
-     message: "required",
-     
+     message: "required",    
   }
 ]
-
-function Register () {
+function Login () {
   const onFinish = (values) =>{
         console.log("Success", values);
   };
@@ -23,31 +21,23 @@ function Register () {
          </h1>
          <Divider />
          <Form layout="vertical"onFinish={onFinish}>
-         <Form.Item label= "Name" name="name"
-          rules={rules}
-          >
-          <Input placeholder="Name" />
-         </Form.Item>
-         <Form.Item label= "Email" name="email"
-          rules={rules}
-         >
+        
+         <Form.Item label= "Email" name="email"rules={rules}>
           <Input placeholder="Email" />
          </Form.Item>
-         <Form.Item label= "Password" name="password"
-          rules={rules}
-         >
+         <Form.Item label= "Password" name="password"rules={rules}>
          <Input type="password" placeholder="Password" />
          </Form.Item>
 
          <Button type="primary" htmlType="submit"block className='mt-2'>        
-         Register
+         Login
          </Button>
 
          <div className='mt-5 text-center'>
          <span className='text-gray-500'>       
-            Already have an account? {""}
+            Don't have an account? {""}
             <Link to="/login"className="text-primary">
-                Login
+                Register
             </Link>    
          </span>
          </div>
@@ -57,4 +47,4 @@ function Register () {
   )
 }
 
-export default Register
+export default Login
